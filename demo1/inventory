@@ -1,0 +1,16 @@
+web1 ansible_ssh_host=192.168.1.144
+db1 ansible_ssh_host=192.168.1.210
+
+[webservers]
+web1
+
+[dbservers]
+db1
+
+[datacenter:children]
+webservers
+dbservers
+
+[datacenter:vars]
+ansible_ssh_user=ansible
+ansible_ssh_pass=VMware@123
